@@ -1,10 +1,12 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+
   # GET /games
   # GET /games.json
   def index
     @games = Game.all
+  
   end
 
   # GET /games/1
@@ -14,7 +16,8 @@ class GamesController < ApplicationController
 
   # GET /games/new
   def new
-    @game = Game.new
+    # @game = Game.new
+    @game = current_user.games.build
   end
 
   # GET /games/1/edit
@@ -24,7 +27,8 @@ class GamesController < ApplicationController
   # POST /games
   # POST /games.json
   def create
-    @game = Game.new(game_params)
+    # @game = Game.new(game_params)
+    @game = current_user.games.build(game_params)
 
     respond_to do |format|
       if @game.save
