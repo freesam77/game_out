@@ -6,8 +6,7 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Email</th>
+      <th>Username</th>
       <th>Photo</th>
       <th>Genre</th>
       <th>Price</th>
@@ -20,13 +19,13 @@
   </thead>
 
   <tbody>
-  <h1> Hello <%= current_user.email %> </h1>
+  <h1> Hello <%= current_user.username %> </h1>
   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <%= link_to('Change Details', edit_user_registration_path) %>
 
     <% @games.each do |game| %>
       <tr>
-        <td><%= game.user %></td>
-        <td><%= game.user.email %></td>
+        <td><%= game.user.username %></td>
         <td><%= game.photo %></td>
         <td><%= game.genre %></td>
         <td><%= game.price %></td>
@@ -35,7 +34,7 @@
         <td><%= game.location %></td>
         <td><%= game.date_listed %></td>
         <td><%= link_to 'Show', game %></td>
-        <% if post.user == current_user %>
+        <% if game.user == current_user %>
           <td><%= link_to 'Edit', edit_game_path(game) %></td>
           <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>

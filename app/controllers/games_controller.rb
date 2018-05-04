@@ -1,12 +1,12 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :set_game, only: [:show, :edit, :update, :destroy]
 
   # GET /games
   # GET /games.json
   def index
     @games = Game.all
-  
+
   end
 
   # GET /games/1
@@ -28,7 +28,7 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     # @game = Game.new(game_params)
-    @game = current_user.games.build(game_params)
+    @game = current_user.games.build(game_params.except :user)
 
     respond_to do |format|
       if @game.save
@@ -73,6 +73,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:user, :photo, :genre, :price, :title, :description, :location, :date_listed)
+      params.require(:game).permit(:photo, :genre, :price, :title, :description, :location, :date_listed)
     end
 end
