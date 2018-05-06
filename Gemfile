@@ -11,6 +11,13 @@ gem 'rails', '~> 5.2.0'
 gem 'devise'
 # figaro 4 Lyfe
 gem 'figaro'
+# fog for AWS
+gem 'fog-aws'
+# paperclip
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
+
+
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
