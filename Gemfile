@@ -13,8 +13,9 @@ gem 'devise'
 gem 'figaro'
 # fog for AWS
 gem 'fog-aws'
-# paperclip
+# paperclip and AWS dependent gem
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk', '~> 2.3'
 
 
 

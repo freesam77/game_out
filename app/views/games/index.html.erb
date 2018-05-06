@@ -6,8 +6,8 @@
 <table>
   <thead>
     <tr>
-      <th>Username</th>
-      <th>Photo</th>
+      <th>Posted By</th>
+      <th>Thumbnail</th>
       <th>Genre</th>
       <th>Price</th>
       <th>Title</th>
@@ -26,9 +26,9 @@
     <% @games.each do |game| %>
       <tr>
         <td><%= game.user.username %></td>
-        <td><%= game.photo %></td>
+        <td><%= image_tag game.image.url(:thumb) %></td>
         <td><%= game.genre %></td>
-        <td><%= game.price %></td>
+        <td>$ <%= game.price %>.00</td>
         <td><%= game.title %></td>
         <td><%= game.description %></td>
         <td><%= game.location %></td>
