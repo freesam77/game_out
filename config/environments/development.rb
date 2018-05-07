@@ -61,4 +61,24 @@ Rails.application.configure do
   # in config/environments/development.rb:
   
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # paperclip config
+    # config/environments/production.rb
+
+    config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+        :bucket => ENV['AWS_BUCKET_ID'],
+        :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+        :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
+        :s3_region => ENV['AWS_REGION']
+      }
+    }
+
+      # Heroku CLI commands to be executed
+        # heroku config:set S3_BUCKET_NAME=gameout
+        # heroku config:set AWS_ACCESS_KEY_ID=your_access_key_id
+        # heroku config:set AWS_SECRET_ACCESS_KEY=your_secret_access_key
+        # heroku config:set AWS_REGION=your_aws_region
+    
 end

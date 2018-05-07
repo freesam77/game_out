@@ -54,13 +54,18 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (9.0.0)
-    aws-sdk (2.11.43)
-      aws-sdk-resources (= 2.11.43)
-    aws-sdk-core (2.11.43)
+    aws-partitions (1.83.0)
+    aws-sdk-core (3.20.2)
+      aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.11.43)
-      aws-sdk-core (= 2.11.43)
+    aws-sdk-kms (1.5.0)
+      aws-sdk-core (~> 3)
+      aws-sigv4 (~> 1.0)
+    aws-sdk-s3 (1.9.1)
+      aws-sdk-core (~> 3)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.0)
     aws-sigv4 (1.0.2)
     bcrypt (3.1.11)
     bindex (0.5.0)
@@ -213,7 +218,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws-sdk (~> 2.3)
+  aws-sdk-s3 (~> 1)
   bootsnap (>= 1.1.0)
   byebug
   devise

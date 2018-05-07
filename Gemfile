@@ -12,11 +12,11 @@ gem 'devise'
 # figaro 4 Lyfe
 gem 'figaro'
 # fog for AWS
-gem 'fog-aws'
+# gem 'fog-aws'
 # paperclip and AWS dependent gem
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
-gem 'aws-sdk', '~> 2.3'
-
+# gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk-s3', '~> 1'
 
 
 
