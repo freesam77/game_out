@@ -18,6 +18,8 @@ gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # gem 'aws-sdk', '~> 2.3'
 gem 'aws-sdk-s3', '~> 1'
 
+gem 'fog-aws'
+
 
 
 # Use postgresql as the database for Active Record
