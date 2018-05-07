@@ -16,7 +16,7 @@ gem 'figaro'
 # paperclip and AWS dependent gem
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # gem 'aws-sdk', '~> 2.3'
-gem 'aws-sdk-s3', '~> 1'
+gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
 
 gem 'fog-aws'
 
