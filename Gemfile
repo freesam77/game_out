@@ -17,7 +17,8 @@ gem 'figaro'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # gem 'aws-sdk', '~> 2.3'
 gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
-
+#stripe
+gem 'stripe'
 gem 'fog-aws'
 
 
