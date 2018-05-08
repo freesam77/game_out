@@ -625,35 +625,16 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.7.1)
-    excon (0.62.0)
     execjs (2.7.0)
     faraday (0.15.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
     figaro (1.1.1)
       thor (~> 0.14)
-    fog-aws (3.0.0)
-      fog-core (~> 2.1)
-      fog-json (~> 1.1)
-      fog-xml (~> 0.1)
-      ipaddress (~> 0.8)
-    fog-core (2.1.0)
-      builder
-      excon (~> 0.58)
-      formatador (~> 0.2)
-      mime-types
-    fog-json (1.1.0)
-      fog-core (~> 2.0)
-      multi_json (~> 1.10)
-    fog-xml (0.1.3)
-      fog-core
-      nokogiri (>= 1.5.11, < 2.0.0)
-    formatador (0.2.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
-    ipaddress (0.8.3)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -680,6 +661,7 @@ GEM
     msgpack (1.2.4)
     multi_json (1.13.1)
     multipart-post (2.0.0)
+    mustermann (1.0.2)
     nio4r (2.3.1)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
@@ -687,6 +669,8 @@ GEM
     pg (1.0.0)
     puma (3.11.4)
     rack (2.0.5)
+    rack-protection (2.0.1)
+      rack
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
     rails (5.2.0)
@@ -721,6 +705,7 @@ GEM
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
     ruby_dep (1.5.0)
+    ruby_http_client (3.3.0)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -732,6 +717,14 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sendgrid-ruby (5.2.0)
+      ruby_http_client (~> 3.2)
+      sinatra (>= 1.4.7, < 3)
+    sinatra (2.0.1)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.1)
+      tilt (~> 2.0)
     sprockets (3.7.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -770,7 +763,6 @@ DEPENDENCIES
   byebug
   devise
   figaro
-  fog-aws
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   paperclip!
@@ -778,6 +770,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.0)
   sass-rails (~> 5.0)
+  sendgrid-ruby
   stripe
   tzinfo-data
   uglifier (>= 1.3.0)

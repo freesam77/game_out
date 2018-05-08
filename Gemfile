@@ -19,8 +19,8 @@ gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
 #stripe
 gem 'stripe'
-gem 'fog-aws'
-
+#sendgrid
+gem 'sendgrid-ruby'
 
 
 # Use postgresql as the database for Active Record
