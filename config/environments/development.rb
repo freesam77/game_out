@@ -67,6 +67,7 @@ Rails.application.configure do
 
     config.paperclip_defaults = {
       :storage => :s3,
+      s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com",
       :s3_credentials => {
         :bucket => ENV['AWS_BUCKET_ID'],
         :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
@@ -75,10 +76,6 @@ Rails.application.configure do
       }
     }
 
-      # Heroku CLI commands to be executed
-        # heroku config:set S3_BUCKET_NAME=gameout
-        # heroku config:set AWS_ACCESS_KEY_ID=your_access_key_id
-        # heroku config:set AWS_SECRET_ACCESS_KEY=your_secret_access_key
-        # heroku config:set AWS_REGION=your_aws_region
+      
     
 end
