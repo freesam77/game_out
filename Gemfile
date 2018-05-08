@@ -17,10 +17,18 @@ gem 'figaro'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # gem 'aws-sdk', '~> 2.3'
 gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
-#stripe
+# stripe
 gem 'stripe'
-#sendgrid
+# sendgrid
 gem 'sendgrid-ruby'
+# elastic search
+## https://www.youtube.com/watch?v=0j-gNrLfDFs
+### CLI to run
+### brew install elasticsearch
+### brew services start elasticsearch   
+# gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: '5.x'
+# gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: '5.x'
+# gem 'tire', '~> 0.6.2'
 
 
 # Use postgresql as the database for Active Record

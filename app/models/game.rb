@@ -1,3 +1,5 @@
+
+
 class Game < ApplicationRecord
     belongs_to :user
 
@@ -6,5 +8,13 @@ class Game < ApplicationRecord
 
     has_attached_file :file
 
+    def self.search(search)
+        if search
+            where (["title ILIKE ?","%#{search}%"])
+        else
+            all
+        end
+
+    end
     
 end

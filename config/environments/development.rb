@@ -67,7 +67,6 @@ Rails.application.configure do
 
     config.paperclip_defaults = {
       :storage => :s3,
-      s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com",
       :s3_credentials => {
         :bucket => ENV['AWS_BUCKET_ID'],
         :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
@@ -78,7 +77,7 @@ Rails.application.configure do
 
         # sendgrid
 
-        config.action_mailer.default_url_options = { :host => 'https://gameout.herokuapp.com/' }
+        config.action_mailer.default_url_options = { :host => 'localhost:3000' }
         ActionMailer::Base.smtp_settings = {
           :address        => "smtp.sendgrid.net",
           :port           => "587",
