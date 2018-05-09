@@ -33,6 +33,7 @@ gem 'sendgrid-ruby'
 
 # bootstrap
 gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 # Use postgresql as the database for Active Record

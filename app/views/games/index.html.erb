@@ -42,7 +42,7 @@
     <% @games.each do |game| %>
       <tr>
         <td><%= game.user.username %></td>
-        <td><%= image_tag game.image.url %></td>
+        <td><%= image_path game.image.url %></td>
         <%#= image_tag @user.avatar.url %>
         <td><%= game.genre %></td>
         <td>$ <%= game.price %>.00</td>
