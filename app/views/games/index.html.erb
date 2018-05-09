@@ -1,7 +1,4 @@
 
-<p id="notice"><%= notice %></p>
-
-<h1>Games</h1>
 
 <%= form_tag games_path, :method => 'get' do %>
   <%= text_field_tag :search, params[:search] %>
@@ -23,15 +20,30 @@
   </thead>
 
   <tbody>
-  <h1> Hello <%= current_user.username %> </h1>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  <%= link_to('Change Details', edit_user_registration_path) %>
-  <%= link_to('Pay me MONEHHH!', new_charge_path) %>
+
+ 
+
+  <% if user_session %>
+    <h1> Hello <%= current_user.username %> </h1>
+    <ul>
+      <li> <%= link_to('Sign Out', destroy_user_session_path, method: :delete) %> </li>
+      <li> <%= link_to('Change Details', edit_user_registration_path) %> </li>
+      <li> <%= link_to('Subscribe for $5', new_charge_path) %> </li>
+    </ul>
+  <% else %>
+    <h1> Hey there! </h1>
+    <ul>
+      <li> <%= link_to('Sign In', new_user_session_path) %> </li>
+      <li> <%= link_to('Subscribe for $5', new_charge_path) %> </li>
+    </ul>
+  <% end %>
+
 
     <% @games.each do |game| %>
       <tr>
         <td><%= game.user.username %></td>
-        <td><%= image_tag game.image.url(:original) %></td>
+        <td><%= image_tag game.image.url %></td>
+        <%#= image_tag @user.avatar.url %>
         <td><%= game.genre %></td>
         <td>$ <%= game.price %>.00</td>
         <td><%= game.title %></td>
