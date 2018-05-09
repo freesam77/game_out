@@ -21,7 +21,6 @@ class GamesController < ApplicationController
   def new
     # @game = Game.new
     @game = current_user.games.build
-    upload
   end
 
   # GET /games/1/edit
