@@ -11,8 +11,11 @@ gem 'rails', '~> 5.2.0'
 gem 'devise'
 # figaro 4 Lyfe
 gem 'figaro'
-# fog for AWS
-# gem 'fog-aws'
+# Carrierwave + fog
+gem 'carrierwave', '~> 1.0'
+gem 'fog-aws'
+gem 'mini_magick', '~> 4.3'
+
 # paperclip and AWS dependent gem
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # gem 'aws-sdk', '~> 2.3'

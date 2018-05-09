@@ -21,6 +21,7 @@ class GamesController < ApplicationController
   def new
     # @game = Game.new
     @game = current_user.games.build
+    upload
   end
 
   # GET /games/1/edit
@@ -30,12 +31,17 @@ class GamesController < ApplicationController
   # POST /games
   # POST /games.json
   def create
-    # @game = Game.new(game_params)
-    @game = current_user.games.build(game_params.except :user)
+    
+    # @game = current_user.games.build(game_params.except :user)
+
+    @game = Game.new(game_params)
+    @game = current_user
+    upload
+    @game.save
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
+        format.html { redirect_to games_url, notice: 'Game was successfully created.' }
         format.json { render :show, status: :created, location: @game }
       else
         format.html { render :new }
@@ -69,6 +75,11 @@ class GamesController < ApplicationController
   end
 
   private
+
+    def upload
+      @game.image
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_game
       @game = Game.find(params[:id])
