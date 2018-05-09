@@ -60,4 +60,8 @@
 
 <br>
 
-<%= link_to 'New Game', new_game_path %>
+<% if @games.blank? %>
+  <h4>There is no games containing <%= params[:search] %>.</h4>
+<% end %>
+
+<%= link_to 'List your GAME', new_game_path %>

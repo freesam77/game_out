@@ -36,8 +36,6 @@ class GamesController < ApplicationController
 
     @game = Game.new(game_params)
     @game = current_user
-    upload
-    @game.save
 
     respond_to do |format|
       if @game.save
