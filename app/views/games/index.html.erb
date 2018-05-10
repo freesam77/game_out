@@ -19,10 +19,10 @@
     <% @games.each do |game| %>
       <tr>
         <td><%= game.user.username %></td>
-        <td><%= image_tag game.image.thumb.url if game.image? %></td>
+        <td><%= image_tag game.image.thumb.url if game.image?%></td>
         <td><%= game.title %></td>
         <td><%= game.genre %></td>
-        <td>$ <%= game.price %></td>
+        <td>$<%= game.price %></td>
         <td><%= game.location %></td>
         <td><%= game.created_at.strftime("%d %b, %Y") %></td>
         
@@ -46,4 +46,5 @@
   <p>There is no games containing <%= params[:search] %>.</p>
 <% end %>
 
-<%= link_to 'List your GAME', new_game_path %>
+<%= link_to '<button class="btn-default">New Listing</button>'.html_safe, new_game_path %> </br>
+

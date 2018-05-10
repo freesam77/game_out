@@ -1,6 +1,20 @@
-html, body {
-    height: 100%;
-  }
+h1{
+  font-family: 'Maven Pro', sans-serif;
+}
+body{
+font-family: 'Open Sans', sans-serif;
+}
+
+.btn-default, .btn-warning{
+  margin-bottom: 0.5em;
+  min-width:5em;
+}
+
+@media (max-width: 768px)
+.container {
+    max-width: 90%;
+}
+
   
   #wrap {
     min-height: 40%;
@@ -18,4 +32,6 @@ html, body {
     height: 150px;
     clear:both;
     padding-top:20px;
-  } 
+  }
+
+
