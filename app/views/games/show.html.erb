@@ -1,41 +1,28 @@
-<%= image_tag @game.image.url %>
+<div class="container">
+  <div class="row">
 
-<p>
-  <strong>Posted by:</strong>
-  <%= @game.user.username %>
-</p>
+      <div class="col-md-6">
+        <%= image_tag @game.image.url %>
+      </div>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @game.genre %>
-</p>
+      <div class="col-md-6">
+        <p> <strong>Posted by:</strong> <%= @game.user.username %> </p>
+        <p> <strong>Genre:</strong> <%= @game.genre %> </p>
+        <p> <strong>Price:</strong> $<%= @game.price %> </p>
+        <p> <strong>Title:</strong> <%= @game.title %> </p>
+        <p> <strong>Location:</strong> <%= @game.location %> </p>
+        <p> <strong>Date listed:</strong> <%= @game.created_at.strftime("%d %b, %Y") %> </p>
+        <%= link_to '<button class="btn-default">Edit</button>'.html_safe, edit_game_path(@game) %>
+        <%= link_to '<button class="btn-default">Contact Seller</button>'.html_safe, edit_game_path(@game) %>
 
-<p>
-  <strong>Price:</strong>
-  $<%= @game.price %>
-</p>
+      </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @game.title %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @game.location %>
-</p>
-
-<p>
-  <strong>Date listed:</strong>
-  <%= @game.created_at.strftime("%d %b, %Y") %>
-</p>
-
-<hr>
+  </div>
+  <hr>
 <p>
   <strong>Description:</strong> </br>
   <%= @game.description %>
 </p>
+<%= link_to '<button class="btn-default">Back</button>'.html_safe, games_path %>
+</div>
 
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>

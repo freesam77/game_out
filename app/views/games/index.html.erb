@@ -4,9 +4,9 @@
     <tr>
       <th>Posted By</th>
       <th>Thumbnail</th>
+      <th>Title</th>
       <th>Genre</th>
       <th>Price</th>
-      <th>Title</th>
       <th>Location</th>
       <th>Date Posted</th>
       <th colspan="3"></th>
@@ -14,59 +14,26 @@
   </thead>
 
   <tbody>
-
-  <!-- experiment>
-  -->
-<%# <div class="row"> %>
-  <div class="col-md-3">
-        <div class="card">
-            <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
-            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">News</span> </div>
-            <div class="card-body">
-            <div class="news-title">
-              <h2 class=" title-small"><a href="#">Syria war: Why the battle for Aleppo matters</a></h2>
-            </div>
-            <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-        </div>
-              
-        <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
-            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">News</span> </div>
-            <div class="card-body">
-                <div class="news-title">
-                <h2 class=" title-small"><a href="#">Syria war: Why the battle for Aleppo matters</a></h2>
-            </div>
-            <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-          </div>
-              </div>
-
-        <div class="row">
-              
-        <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/travel.jpg" alt="">
-                <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">Politics</span> </div>
-                <div class="card-body">
-            <div class="news-title">
-                    <h2 class=" title-small"><a href="#">Key Republicans sign letter warning against</a></h2>
-                  </div>
-            <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-          </div>
-          </div>
-      </div>
-      <%# </div> %>
   
 
     <% @games.each do |game| %>
       <tr>
         <td><%= game.user.username %></td>
         <td><%= image_tag game.image.thumb.url if game.image? %></td>
+        <td><%= game.title %></td>
         <td><%= game.genre %></td>
         <td>$ <%= game.price %></td>
-        <td><%= game.title %></td>
         <td><%= game.location %></td>
         <td><%= game.created_at.strftime("%d %b, %Y") %></td>
-        <td><%= link_to 'Show', game %></td>
+        
+        <td><%= link_to '<button class="btn-default">Show</button>'.html_safe, game %>
         <% if game.user == current_user %>
-          <td><%= link_to 'Edit', edit_game_path(game) %></td>
-          <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </br>
+          <%= link_to '<button class="btn-default">Edit</button>'.html_safe, edit_game_path(game) %> </br>
+          <%= link_to '<button class="btn-warning">Destroy</button>'.html_safe, game, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        <% else %>
+          </td>
         <% end %>
       </tr>
     <% end %>
