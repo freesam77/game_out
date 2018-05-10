@@ -1,5 +1,5 @@
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Posted By</th>
@@ -15,7 +15,45 @@
 
   <tbody>
 
-<%#= image_path game.image.url %>
+  <!-- experiment>
+  -->
+<%# <div class="row"> %>
+  <div class="col-md-3">
+        <div class="card">
+            <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
+            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">News</span> </div>
+            <div class="card-body">
+            <div class="news-title">
+              <h2 class=" title-small"><a href="#">Syria war: Why the battle for Aleppo matters</a></h2>
+            </div>
+            <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+        </div>
+              
+        <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
+            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">News</span> </div>
+            <div class="card-body">
+                <div class="news-title">
+                <h2 class=" title-small"><a href="#">Syria war: Why the battle for Aleppo matters</a></h2>
+            </div>
+            <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+          </div>
+              </div>
+
+        <div class="row">
+              
+        <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/travel.jpg" alt="">
+                <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">Politics</span> </div>
+                <div class="card-body">
+            <div class="news-title">
+                    <h2 class=" title-small"><a href="#">Key Republicans sign letter warning against</a></h2>
+                  </div>
+            <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+          </div>
+          </div>
+      </div>
+      <%# </div> %>
+  
+
     <% @games.each do |game| %>
       <tr>
         <td><%= game.user.username %></td>
