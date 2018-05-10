@@ -12,7 +12,6 @@
   <% end %> 
 
 
-
   <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image %>
@@ -25,7 +24,8 @@
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.number_field :price %>
+    <%= form.number_field :price, class: :text_field, step: ".01" %>
+    
   </div>
 
   <div class="field">
