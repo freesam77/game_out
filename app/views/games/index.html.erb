@@ -1,9 +1,6 @@
 
 
-<%= form_tag games_path, :method => 'get' do %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag 'Search' %>
-<% end %>
+
 
 <table>
   <thead>
@@ -61,7 +58,7 @@
 <br>
 
 <% if @games.blank? %>
-  <h4>There is no games containing <%= params[:search] %>.</h4>
+  <p>There is no games containing <%= params[:search] %>.</p>
 <% end %>
 
 <%= link_to 'List your GAME', new_game_path %>
