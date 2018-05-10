@@ -7,9 +7,18 @@ font-family: 'Open Sans', sans-serif;
 
 .btn-default, .btn-warning{
   margin-bottom: 0.5em;
-  min-width:5em;
 }
+    /* Custom Class for index.html.erb */
+    .indexx{
+      
+      width:8em;
 
+    }
+
+
+.page-footer{
+  background-color: grey;
+}
 @media (max-width: 768px)
 .container {
     max-width: 90%;

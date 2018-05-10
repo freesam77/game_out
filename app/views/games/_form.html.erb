@@ -1,4 +1,4 @@
-<div class="container">
+<%# <div class="container"> %>
     <%= form_with(model: game, local: true, multipart: true ) do |form| %>
       <% if game.errors.any? %>
         <div id="error_explanation">
@@ -53,4 +53,4 @@
         <%= form.submit %>
       </div>
     <% end %>
-</div>
+<%# </div> %>

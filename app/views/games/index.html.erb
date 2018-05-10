@@ -1,3 +1,4 @@
+<div class="container">
 
 <table class="table">
   <thead>
@@ -26,11 +27,11 @@
         <td><%= game.location %></td>
         <td><%= game.created_at.strftime("%d %b, %Y") %></td>
         
-        <td><%= link_to '<button class="btn-default">Show</button>'.html_safe, game %>
+        <td><%= link_to '<button class="btn-default indexx">Show</button>'.html_safe, game %>
         <% if game.user == current_user %>
           </br>
-          <%= link_to '<button class="btn-default">Edit</button>'.html_safe, edit_game_path(game) %> </br>
-          <%= link_to '<button class="btn-warning">Destroy</button>'.html_safe, game, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to '<button class="btn-default indexx">Edit</button>'.html_safe, edit_game_path(game) %> </br>
+          <%= link_to '<button class="btn-danger indexx">Destroy</button>'.html_safe, game, method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         <% else %>
           </td>
@@ -47,4 +48,4 @@
 <% end %>
 
 <%= link_to '<button class="btn-default">New Listing</button>'.html_safe, new_game_path %> </br>
-
+</div>
