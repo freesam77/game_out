@@ -30,11 +30,8 @@ class GamesController < ApplicationController
   # POST /games
   # POST /games.json
   def create
-    
-    # @game = current_user.games.build(game_params.except :user)
-
-    @game = Game.new(game_params)
-    @game = current_user
+    # @game = Game.new(game_params)
+    @game = current_user.games.build(game_params.except :user)
 
     respond_to do |format|
       if @game.save
@@ -84,6 +81,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:image, :genre, :price, :title, :description, :location, :date_listed)
+      params.require(:game).permit(:genre, :price, :title, :description, :location, :date_listed, :image)
     end
 end

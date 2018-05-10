@@ -42,7 +42,7 @@
     <% @games.each do |game| %>
       <tr>
         <td><%= game.user.username %></td>
-        <td><%= image_tag(game.image.small_thumb.url, alt: 'Image') if game.image?%></td>
+        <td><%= image_tag game.image.thumb.url if game.image? %></td>
         <td><%= game.genre %></td>
         <td>$ <%= game.price %>.00</td>
         <td><%= game.title %></td>
