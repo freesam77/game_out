@@ -27,7 +27,7 @@
 
 <p>
   <strong>Date listed:</strong>
-  <%= @game.date_listed %>
+  <%= @game.created_at.strftime("%d %b, %Y") %>
 </p>
 
 <hr>
