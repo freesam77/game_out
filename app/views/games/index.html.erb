@@ -31,7 +31,7 @@
         <% if game.user == current_user %>
           </br>
           <%= link_to '<button class="btn-default indexx">Edit</button>'.html_safe, edit_game_path(game) %> </br>
-          <%= link_to '<button class="btn-danger indexx">Destroy</button>'.html_safe, game, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to '<button class="btn-danger indexx">Delete</button>'.html_safe, game, method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         <% else %>
           </td>
