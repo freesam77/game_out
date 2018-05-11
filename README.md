@@ -7,9 +7,9 @@
 
 - [Application Links](#application-links)
 - [Project Plan](#project-plan)
+- [Wireframes](#wireframes)
 - [Analysis and Solution](#analysis-and-solution)
 - [User Stories](#user-stories)
-- [Wireframes](#wireframes)
 - [Entity Relationship Diagram](#entity-relationship-diagram)
 - [Website Flowchart](#website-flowchart)
 - [Style Guide](#style-guide)
@@ -142,16 +142,6 @@ There has not been a specific two-sided marketplace that focuses on selling used
 By building a specific site that tackles this niche, not only it will bridge the gap of supply and demand in used games, but it will also promote sociality between gamers through interaction from transaction that occurs.
 
 
-# Future Functionality
-
-
-
-*   Comments and messaging functionality
-*   Hashtag elements
-*   Profile
-*   Comparison between listed price with RRP database
-
-
 # User Stories
 
 
@@ -271,6 +261,14 @@ Scenario - Using a functionality to sort and filter at index page
 *   Then I should be able to sort and filter out the listing
 
 
+
+
+# Entity Relationship Diagram
+
+![alt_text](app/assets/images/erd.jpg)
+
+
+
 # Website Flowchart
 
 ![alt_text](app/assets/images/web_flowchart.jpg)
@@ -335,6 +333,16 @@ Open Sans is a great combination with Maven Pro as a paragraph text.
 
 ---
 
+
+
+# Future Functionality
+
+
+
+*   Comments and messaging functionality
+*   Hashtag elements
+*   Profile
+*   Comparison between listed price with RRP database
 
 
 # References
